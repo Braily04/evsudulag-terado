@@ -1,0 +1,38 @@
+<div class="container login-container">
+    <h3>Log-in Page</h3>
+            <form
+            [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                <label>Email:</label>
+                <input type="email"
+                formControlName="email"/>
+                <div
+                *ngIf="loginForm.get('email')?.invalid &&
+                loginForm.get('email')?.touched">
+                <small
+                *ngIf="loginForm.get('email')?.errors?.['required']">Email is required. </small>   
+            <small
+            *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email address. </small>    
+            </div>
+
+            <label>Password:</label>
+                <input type="password"
+                formControlName="password"/>
+                <div
+                *ngIf="loginForm.get('password')?.invalid &&
+                loginForm.get('password')?.touched">
+                <small
+                *ngIf="loginForm.get('password')?.errors?.['required']">Password is required. </small>   
+            <small
+            *ngIf="loginForm.get('password')?.errors?.['minlength']">Must be at least 8 characters long. </small>    
+            </div>
+
+            <button
+            type="submit">Login</button>
+            <p *ngIf="loginSuccess"
+            class="success-message">Login Successful!</p>
+        </form>
+        </div>
+        <footer class="footer">
+            <p>Terado, Braily D. BSIT-3B</p>
+        </footer>
