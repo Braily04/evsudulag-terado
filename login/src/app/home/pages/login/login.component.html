@@ -4,6 +4,10 @@
 
             <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
+                <div *ngIf="loginError" class="alert">
+                    Oops! Something went wrong. Incorrect login details.
+                  </div>
+
                 <mat-form-field class="full-width">
 
                 <mat-label>Email:</mat-label>
@@ -16,9 +20,9 @@
             <mat-error *ngIf="email?.hasError('email')">
                 Please enter a valid email address. </mat-error>
 
-            </mat-form-field>
+                </mat-form-field>
 
-        <mat-form-field class="full-width">
+                <mat-form-field class="full-width">
 
             <mat-label>Password:</mat-label>
                 <input type="password" matInput 
