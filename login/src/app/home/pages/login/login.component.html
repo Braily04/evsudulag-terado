@@ -2,17 +2,17 @@
     <mat-card class="login-card">
         <mat-card-title>LOG-IN PAGE</mat-card-title>
 
-            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div *ngIf="loginError" class="alert">
+            Oops! Something went wrong.<br>Incorrect login details.
+        </div>
 
-                <div *ngIf="loginError" class="alert">
-                    Oops! Something went wrong. Incorrect login details.
-                  </div>
+            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
                 <mat-form-field class="full-width">
 
                 <mat-label>Email:</mat-label>
                 <input type="email" matInput 
-                formControlName="email"
+                formControlName="username"
                 placeholder="Ex. example@gmail.com">
 
                 <mat-error *ngIf="email?.hasError('required')">

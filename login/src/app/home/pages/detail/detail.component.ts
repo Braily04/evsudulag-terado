@@ -10,10 +10,10 @@ import { UserService } from '../../services/user.service';
   styleUrl: './detail.component.css'
 })
 export class DetailComponent {
-  user: UserDetail | null;
+  // user: UserDetail | null;
 
-  constructor(private UserService: UserService) {
-    this.user = this.UserService.getLoggedInUser();
-  }
+  // constructor(private UserService: UserService) {
+  //   this.user = this.UserService.getLoggedInUser();
+  // }
 
 }

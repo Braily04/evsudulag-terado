@@ -40,3 +40,9 @@ mat-card-title {
 .custom-login-btn:hover {
     background: linear-gradient( to right, #007bff, #6a0dad);
 }
+.alert {
+    color: red;
+    text-align: center;
+    margin: -12px 0 4px 0;
+    border: 2px solid red;
+}
